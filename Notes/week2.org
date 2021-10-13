@@ -1,0 +1,53 @@
+#+TITLE: Week2
+
+* Building strong stream ciphers
++ Introduce non-linearity in state updating function
+  - Add recursion formula.... makes[[id:57affedd-ff03-439e-a630-1f48d135ef73][ NLFSR]]
++ After writing D and K, do blank cycles
+
+* NLFSR
+:PROPERTIES:
+:ID:       57affedd-ff03-439e-a630-1f48d135ef73
+:END:
+
+* Real-world stream ciphers
+:PROPERTIES:
+:ID:       279158d8-2e21-4521-abc3-93d43f11d435
+:END:
+** DECT Stream Cipher
+:PROPERTIES:
+:ID:       3e8dee7f-d6bf-47d9-b046-d47fde8f616f
+:END:
++ Used in wireless phones today
++ 4 max-length LFSR ,coprime lengths
++ Top 3 clocked 2 / 3 times between time steps $t$
++ Bottom LFSR determines clocking of top 3 ones
++ Output function O with 1 bit of memory
++ Broken with statistical key recovery attack
+** Trivium
+:PROPERTIES:
+:ID:       fec625c8-2002-4c12-acba-1a336da46beb
+:END:
++ claims 80 bits of security
++ 80-bit K and D
++ 288 bit state
++ linear output function
++ regularly clocked
++ non-linearity in update, 3 AND gates
++ output period not known in advance but likely OK
++ takes 1152 cycles
++ as yet unbroken
+
+** RC4
+:PROPERTIES:
+:ID:       4baff833-bff4-441b-b2ec-dd53ccd2dd50
+:END:
++ K with $x$ bytes where $5 \leq x \leq 256$, no dedicated D
++ State : 256 byte array, 2 pointers
++ Used in TLS
++ Software-oriented
++ Biases in keystream
++ Broken in practice
+
+* Summary of stream ciphers
++ Some broken, irregularly clocked ciphers

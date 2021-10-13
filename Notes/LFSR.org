@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       21e050ae-e383-4321-9a9d-be64f5a43da1
+:END:
+* LFSR

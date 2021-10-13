@@ -1,0 +1,6 @@
+#+TITLE: Intro to Cryptography Assignment 1
+#+AUTHOR: Jan Hendron(s1049777)
+
+* Question 1
+a) Because we only consider exhaustive key search, this means that other methods, such as statistical methods on cipher text, is not
+   considered, and so this adds extra security.
